@@ -12,17 +12,17 @@
             <h2>Angelina</h2>
 
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Skills</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-test">
+    <section id="home" class="hero">
+        <div class="hero-text">
             <h3>Hello, I'm</h3>
             <h1>Angelina Sefakor Avornyo</h1>
             <h2>Information Technology Student</h2>
@@ -31,7 +31,7 @@
                 and creating solutions through programming.
             </p>
 
-            <button>Contact Me</button>
+            <button onclick="location.href='#contact'">Contact Me</button>
         </div>
 
         <div class="hero-image">
@@ -40,7 +40,7 @@
         
     </section>
 
-    <section class="about">
+    <section id="about" class="about">
         <h2>About Me</h2>
 
         <p>
@@ -51,7 +51,7 @@
         </p>
     </section>
 
-    <section class="education">
+    <section id="education" class="education">
         <h2>Education</h2>
         <h3>University of Professional Studies, Accra</h3>
         
@@ -60,7 +60,7 @@
 
     </section>
 
-    <section class="skills">
+    <section id="skills" class="skills">
         <h2>Skills</h2>
 
         <div class="skill-container">
@@ -74,7 +74,7 @@
         </div>
     </section>
 
-    <section class="projects">
+    <section id="projects" class="projects">
         <h2>Projects</h2>
         <div class="project-card">
             <h3>Portfolio Website</h3>
@@ -94,7 +94,7 @@
 
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
         <h2>Contact Me</h2>
 
         <form>
@@ -109,5 +109,28 @@
     <footer>
         <p>©2026 Angelina Avornyo. All Rights Reserved.</p>
     </footer>
+
+    <!-- Active nav highlighting script -->
+    <script>
+    (function() {
+      const navLinks = document.querySelectorAll('nav ul li a');
+      const sections = document.querySelectorAll('section[id]');
+
+      function onScroll() {
+        const scrollPos = window.scrollY + (window.innerHeight / 4);
+        let currentId = '';
+        sections.forEach(s => {
+          if (scrollPos >= s.offsetTop) currentId = s.id;
+        });
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + currentId);
+        });
+      }
+
+      document.addEventListener('scroll', onScroll, { passive: true });
+      // run once on load
+      onScroll();
+    })();
+    </script>
 </body>
 </html>
