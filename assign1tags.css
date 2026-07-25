@@ -108,7 +108,7 @@ section h2{
 /* About */
 .about p,
 .education p{
-    text-align:justify;
+    text-align: align-left;
     max-width:700px;
     margin:auto;
 }
