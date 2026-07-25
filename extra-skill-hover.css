@@ -1,0 +1,10 @@
+/* skill hover interaction */
+.skill{
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms;
+  cursor:default;
+}
+.skill:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 14px 40px rgba(2,6,23,0.55);
+  cursor:pointer;
+}
